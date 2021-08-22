@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mock Twitter</title>
+    <link rel="stylesheet" href="app.component.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+    <!-- sidebar starts -->
+    <div class="sidebar">
+      <i class="fab fa-twitter"></i>
+      <div class="sidebarOption active">
+        <span class="material-icons"> home </span>
+        <h2>Home</h2>
+      </div>
+
+      <div class="sidebarOption">
+        <span class="material-icons"> tag </span>
+        <h2>Explore</h2>
+      </div>
+
+      <div class="sidebarOption">
+        <span class="material-icons"> notifications_none </span>
+        <h2>Notifications</h2>
+      </div>
+
+      <div class="sidebarOption">
+        <span class="material-icons"> mail_outline </span>
+        <h2>Messages</h2>
+      </div>
+
+      <div class="sidebarOption">
+        <span class="material-icons"> bookmark_border </span>
+        <h2>Bookmarks</h2>
+      </div>
+
+      <div class="sidebarOption">
+        <span class="material-icons"> list_alt </span>
+        <h2>Lists</h2>
+      </div>
+
+      <div class="sidebarOption">
+        <span class="material-icons"> perm_identity </span>
+        <h2>Profile</h2>
+      </div>
+
+      <div class="sidebarOption">
+        <span class="material-icons"> more_horiz </span>
+        <h2>More</h2>
+      </div>
+      <button class="sidebar__tweet">Tweet</button>
+    </div>
+    <!-- sidebar ends -->
+
+    <!-- feed starts -->
+    <div class="feed">
+      <div class="feed__header">
+        <h2>Home</h2>
+      </div>
+
+      <!-- tweetbox starts -->
+      <div class="tweetBox">
+        <form>
+          <div class="tweetbox__input">
+            <img
+              src="https://pbs.twimg.com/profile_images/1405273225274085377/vvSbBVzn_400x400.jpg"
+              alt=""
+            />
+            <input type="text" placeholder="What's happening?" />
+          </div>
+          <button mat-raised-button class="tweetBox__tweetButton">Tweet</button>
+        </form>
+      </div>
+      <!-- tweetbox ends -->
+
+      <!-- post starts -->
+      <div class="post">
+        <div class="post__avatar">
+          <img
+            src="https://pbs.twimg.com/profile_images/1170690523201527808/FriNRiir_400x400.png"
+            alt=""
+          />
+        </div>
+
+        <div class="post__body">
+          <div class="post__header">
+            <div class="post__headerText">
+              <h3>
+                ESPN BR huehue
+                <span class="post__headerSpecial"
+                  ><span class="material-icons post__badge"> verified </span>@NonExistingESPNChannel</span
+                >
+              </h3>
+            </div>
+            <div class="post__headerDescription">
+              <p>Ítalo Ferreira é o primeiro campeão olímpico de Surf da história!</p>
+            </div>
+          </div>
+          <img
+            src="https://medias.cnnbrasil.com.br/italo-ferreira-celebra-conquista-do-ouro-no-surf-a-primeira-do-brasil-em-toquio.jpeg?format=JPEG&image=https://mediastorage.cnnbrasil.com.br/IMAGES/00/00/04/48128_4A55FEED85A00EF9.jpg&width=800&height=400&resize=CROP"
+            alt=""
+          />
+          <div class="post__footer">
+            <button mat-icon-button class="commentbutton">
+              <mat-icon>chat_bubble_outline</mat-icon>
+            </button>
+            <button mat-icon-button class="retweetbutton">
+              <mat-icon>repeat</mat-icon>
+            </button>
+            <button mat-icon-button [ngClass]="{'like' : likeStatus==1}" type="button" (click)="liking()" class="likebutton">
+              <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-icon-button type="button" class="sharebutton">
+              <mat-icon>publish</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- post ends -->
+
+      <!-- post starts -->
+      <div class="post">
+        <div class="post__avatar">
+          <img
+            src="https://pbs.twimg.com/profile_images/801508268895911936/hG5zHeyZ_400x400.jpg"
+            alt=""
+          />
+        </div>
+
+        <div class="post__body">
+          <div class="post__header">
+            <div class="post__headerText">
+              <h3>
+                Tesla Fake Motors Club
+                <span class="post__headerSpecial"
+                  ><span class="material-icons post__badge"> verified </span>@TeslaFakeMotorsClub</span
+                >
+              </h3>
+            </div>
+            <div class="post__headerDescription">
+              <p>Tesla stops fabricating cars in red color. Elon Musk says: "I don't want my cars being mistaken for Ferraris anymore."</p>
+            </div>
+          </div>
+          <img
+            src="https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03.jpg"
+            alt=""
+          />
+          <div class="post__footer">
+            <button mat-icon-button class="commentbutton">
+              <mat-icon>chat_bubble_outline</mat-icon>
+            </button>
+            <button mat-icon-button class="retweetbutton">
+              <mat-icon>repeat</mat-icon>
+            </button>
+            <button mat-icon-button [ngClass]="{'like':likeStatus==1}" type="button" (click)="liking()" class="likebutton">
+              <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-icon-button type="button" class="sharebutton">
+              <mat-icon>publish</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- post ends -->
+    </div>
+    <!-- feed ends -->
+
+    <!-- widgets starts -->
+    <div class="widgets">
+      <div class="widgets__input">
+        <button mat-icon-button class="material-icons widgets__searchIcon"> search </button>
+        <input type="text" class="searchtwit" placeholder="Search Twitter" />
+      </div>
+
+      <div class="widgets__widgetContainer">
+        <h2>What's happening?</h2>
+          <p lang="en" dir="ltr">
+            MAGIC! The Gathering is voted to become a new olympic sport.
+            <img class="img"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZP9sDxQtJD1yj_n7pySEj4ugUf-dWjknjJQ&usqp=CAU"
+            alt=""
+          />
+          <div>
+            <a>According to the olympics comitee of Paris 2024, the card game is on the clipboard of the possible new sports of the tournament.</a>
+          </div>
+          <div class="link">
+            <u>@FakeOlympics</u>
+          </div>
+          <div class="fakedate">
+            <h5><strong><u>July 30, 2021</u></strong></h5>
+          </div>
+      </div>
+    </div>
+    <!-- widgets ends -->
+
+  </body>
+</html>
